@@ -176,25 +176,39 @@ function onMouseDown(event) {
 function tankBuilder(data) {
   this.tankobj = new createjs.Container();
   this.tankobj.name = data.id;
-
   var base = new createjs.Shape();
   base.name = "base";
   base.graphics.beginFill(data.color).drawRect(-20, -30, 40, 60);
   this.tankobj.x = data.initX;
   this.tankobj.y = data.initY;
 
-  var hud = new createjs.Shape();
-  hud.name = "hud";
-  hud.graphics.beginFill("#624900").drawRect(-16, -12, 32, 24);
-  hud.graphics.beginFill("#624900").drawRect(-46, -3, 30, 6);
-  hud.x = base.x;
-  hud.y = base.y;
+    var tallHP = new createjs.Shape();
+    tallHP.name='tallHP';
+    tallHP.graphics.beginFill("#fff").drawRect(-16,-46,32,10);
+    tallHP.x=base.x;
+    tallHP.y=base.y;
+    var HP = new createjs.Shape();
+    HP.name='HP';
+    HP.graphics.beginFill("#ff0d26").drawRect(-15,-45,30,8);
+    HP.x=base.x;
+    HP.y=base.y;
+    var hud = new createjs.Shape();
+    hud.name = "hud";
+    hud.graphics.beginFill("#624900").drawRect(-16, -12, 32, 24);
+    hud.graphics.beginFill("#624900").drawRect(-46, -3, 30, 6);
+    hud.x = base.x;
+    hud.y = base.y;
+    var nicname=new createjs.Text(data.nickname,"14px Arial", "#fff");
+    nicname.x=base.x-10;
+    nicname.y=base.y;
 
   //this.tankobj.addChild(hitArea);
-  this.tankobj.addChild(base);
-  this.tankobj.addChild(hud);
-  
-  return this;
+    this.tankobj.addChild(base);
+    this.tankobj.addChild(hud);
+    this.tankobj.addChild(nicname);
+    this.tankobj.addChild(tallHP);
+    this.tankobj.addChild(HP);
+    return this;
 }
 
   // tankBuilder.prototype.fire = function() {

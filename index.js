@@ -23,6 +23,7 @@ io.on('connection', function(socket){
     id:uid,
     initX:Math.random() * 500,
     initY:Math.random() * 500,
+    nickname:'tank'+uid,
     color:'#'+Math.floor(Math.random()*16777215).toString(16)
   }
   socket.tank = tank;
