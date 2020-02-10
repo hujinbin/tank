@@ -18,6 +18,11 @@ http://tank.leheavengame.com/
 </div>
 
 
+方向键控制坦克移动，
+鼠标点击发射子弹
+
+
+
 ``` bash
 项目地址：（git clone）
 
